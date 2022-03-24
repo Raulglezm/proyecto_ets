@@ -1,6 +1,10 @@
 # proyecto_ets
 
 
+<div align="center">
+<img src="https://user-images.githubusercontent.com/91631138/160023359-44d1fa5f-6ddf-4517-9407-279bed124b89.PNG" />
+</div>
+
 
 ## Descripción de la aplicación
 La aplicación ShopGaming te hace la vida más fácil a la hora de buscar cualquier producto gaming, conozca los detalles de los productos comparando por precio y características.
