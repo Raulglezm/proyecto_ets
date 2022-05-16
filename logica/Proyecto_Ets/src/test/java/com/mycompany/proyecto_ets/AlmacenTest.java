@@ -45,4 +45,22 @@ public class AlmacenTest {
         Assertions.assertNotNull(almacen.resenias, "las resenias son nulas");
     }
 
+    @Test
+    public void addProductoTest() {
+
+        almacen.addProducto(1, "Manzana", 1, 1);
+
+        Assertions.assertNotNull(almacen.productos, "las resenias son nulas");
+    }
+
+
+    @Test
+    public void listarProductoAlmacenTest(){
+        int id = 1;
+        String nombre = "Manzana";
+        almacen.addProducto(id, nombre, 1, 1);
+        Assertions.assertTrue(almacen.listarProductoAlmacen().contains(nombre)
+             && almacen.listarProductoAlmacen().contains(id+""), "La lista deberia contener el nombre  el id");
+    }
+
 }

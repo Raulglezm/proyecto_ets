@@ -4,7 +4,7 @@ public class Cliente {
 
     int id;
     String nombre;
-    String apellido;
+    String contra;
 
     /**
      * Constructor con tres parametrod de Cliente
@@ -12,10 +12,29 @@ public class Cliente {
      * @param nombre del cliente
      * @param apellido del cliente
      */
-    public Cliente(int id, String nombre, String apellido) {
+    public Cliente(int id, String nombre, String contra) {
         this.id = id;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.contra = contra;
     }
 
+    
+
+    public String getContra() {
+        return contra;
+    }
+
+    public void setContra(String contra) {
+        this.contra = contra;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
 }

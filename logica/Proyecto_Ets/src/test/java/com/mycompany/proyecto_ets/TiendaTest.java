@@ -44,5 +44,11 @@ public class TiendaTest {
         tienda.addUsuario(1212);
         Assertions.assertNotNull(tienda.usuarios, "Los usuarios no deben ser nulos");
     }
+
+    @Test
+    public void listarAlmacenesTest(){
+        tienda.addAlmacen(id, nombre);
+        Assertions.assertTrue(tienda.listarAlmacenes().contains(nombre) && tienda.listarAlmacenes().contains(id+""), "La lista deberia contener el nombre");
+    }
 }
 

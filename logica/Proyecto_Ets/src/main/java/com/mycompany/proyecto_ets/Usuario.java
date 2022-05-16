@@ -11,31 +11,48 @@ import java.util.ArrayList;
  *
  * @author Raúl González Martín<Raulglezmartin@gmail.com>
  */
-class Usuario {
+public class Usuario {
 
     int id;
-    ArrayList<Cliente> clientes;
+    public ArrayList<Cliente> clientes;
     Cliente cliente;
 
     /**
      * Constructor de la clase Usuario
+     * 
      * @param id de usuario
      */
-    public Usuario(int id){
+    public Usuario(int id) {
         this.id = id;
         clientes = new ArrayList<>();
     }
 
-
     /**
      * Metodo para aniadir clientes a la tienda
-     * @param id del cliente
-     * @param nombre del cliente
-     * @param apellido del cliente
+     * @param contra del cliente
+     * @param id       del cliente
+     * @param nombre   del cliente
      */
-    public void addCliente(int id, String nombre, String apellido){
-        cliente = new Cliente(id, nombre, apellido);
+    public void addCliente(int id, String nombre, String contra) {
+        cliente = new Cliente(id, nombre, contra);
         clientes.add(cliente);
     }
+
+    /**
+     * Este metodo comprueba si un cliente ya existe
+     * 
+     * @return verdadero si el cliente existe
+     */
+    public boolean clienteExiste(String contra, String nombre) {
+        for (Cliente cliente : clientes) {
+            if(nombre.equals(cliente.getNombre()) && contra.equals(cliente.getContra())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    
 
 }

@@ -13,12 +13,13 @@ public class Tienda {
     Almacen almacen;
     Usuario usuario;
 
-    HashMap<Integer, Almacen> almacenes;
+    public HashMap<Integer, Almacen> almacenes;
     HashMap<Integer, Usuario> usuarios;
 
     /**
      * Constructor con dos parametros de Tienda
-     * @param id de la tienda
+     * 
+     * @param id     de la tienda
      * @param nombre de la tienda
      */
     public Tienda(int id, String nombre) {
@@ -30,21 +31,35 @@ public class Tienda {
 
     /**
      * Metodo para añadir nuevos almacenes(categorias de productos) a nuestra tienda
-     * @param id del almacen
+     * 
+     * @param id     del almacen
      * @param nombre del almacen
      */
-    public void addAlmacen(int id, String nombre){
+    public void addAlmacen(int id, String nombre) {
         almacen = new Almacen(id, nombre);
         almacenes.put(id, almacen);
     }
 
-    public void addUsuario(int id){
+    public void addUsuario(int id) {
         usuario = new Usuario(id);
         usuarios.put(id, usuario);
     }
 
-    //GETERS Y SETTERS
+    /**
+     * Metodo para listar los almacenes
+     * 
+     * @return string de los almacenes que existen
+     */
+    public String listarAlmacenes() {
+        String registro = "";
+        for (Integer clave : almacenes.keySet()) {
+            Almacen valor = almacenes.get(clave);
+            registro += valor + "\n";
+        }
+        return registro;
+    }
 
+    // GETERS Y SETTERS
 
     public String getAdmin() {
         return admin;
@@ -61,6 +76,5 @@ public class Tienda {
     public void setContra(String contra) {
         this.contra = contra;
     }
-    
-    
+
 }

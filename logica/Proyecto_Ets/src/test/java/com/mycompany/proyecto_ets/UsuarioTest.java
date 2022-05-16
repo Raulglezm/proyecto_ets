@@ -18,6 +18,8 @@ public class UsuarioTest {
     Usuario usuario;
 
     public static final int id = 1010;
+    public static final String nombre = "juan";
+    public static final String contra = "1q2w3e4r";
 
     @BeforeEach
     public void before() {
@@ -34,11 +36,22 @@ public class UsuarioTest {
 
     @Test
     public void addClienteTest() {
-        String nombre = "juan";
-        String apellido = "martin";
-        usuario.addCliente(id, nombre, apellido);
+        usuario.addCliente(id, nombre, contra);
 
         Assertions.assertNotNull(usuario.clientes, "Los usuarios no deben ser nulos");
     }
+
+    @Test
+    public void clienteExisteTest(){
+        usuario.addCliente(id, nombre, contra);
+        Assertions.assertTrue(usuario.clienteExiste(contra, nombre), "El cliente no debe existir" );
+    }
+
+    @Test
+    public void clienteNoExisteTest(){
+        usuario.addCliente(id, nombre, contra);
+        Assertions.assertFalse(usuario.clienteExiste("212121", nombre), "El cliente si debe existir" );
+    }
+
 
 }
